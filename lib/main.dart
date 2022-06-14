@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'tuangeun_theme.dart';
 import 'home.dart';
+import 'cafe_card.dart';
 
 void main() {
   runApp(const Tuangeun());

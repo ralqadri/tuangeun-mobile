@@ -78,7 +78,7 @@ class TuangeunTheme {
         backgroundColor: Colors.black,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.redAccent,
       ),
       textTheme: lightTextTheme,
     );
@@ -94,10 +94,10 @@ class TuangeunTheme {
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.redAccent,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.red,
       ),
       textTheme: darkTextTheme,
     );
