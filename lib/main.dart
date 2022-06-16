@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'tuangeun_theme.dart';
 import 'home.dart';
-import 'resto_card.dart';
 
 void main() {
   runApp(const Tuangeun());

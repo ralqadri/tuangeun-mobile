@@ -15,10 +15,7 @@ class RestoInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints.expand(
-        width: 500,
-        height: 72,
-      ),
+      constraints: const BoxConstraints(minWidth: 700, maxWidth: 1280),
       padding: const EdgeInsets.all(8),
       child: Row(
         children: [
