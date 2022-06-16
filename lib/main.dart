@@ -11,6 +11,7 @@ class Tuangeun extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkTheme = TuangeunTheme.dark();
+    // ignore: unused_local_variable
     final lightTheme = TuangeunTheme.light();
     return MaterialApp(
       title: 'Tuangeun',
