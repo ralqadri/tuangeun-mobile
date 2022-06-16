@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    const RestoCard(),
+    RestoCard(),
     Container(color: Colors.green),
     Container(color: Colors.blue),
   ];
