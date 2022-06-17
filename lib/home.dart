@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'searchPage.dart';
 import 'resto_card.dart';
 
 // 1
@@ -14,7 +15,7 @@ class _HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
     RestoCard(),
-    Container(color: Colors.green),
+    SearchScreen(),
     Container(color: Colors.blue),
   ];
 
