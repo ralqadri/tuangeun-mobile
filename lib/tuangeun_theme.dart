@@ -103,3 +103,10 @@ class TuangeunTheme {
     );
   }
 }
+
+// const kBackgroundColor = Color(0xFFF0D6B0);
+// const kActiveIconColor = Color(0xFFAD401B);
+// const kTextColor = Color(0xFFDEAA22);
+// const k = Color();
+// const kActiveIconColor = Color();
+const kShadowColor = Color(0xFF3D504C);
