@@ -4,28 +4,28 @@ import 'package:google_fonts/google_fonts.dart';
 class TuangeunTheme {
   // 1
   static TextTheme lightTextTheme = TextTheme(
-    bodyText1: GoogleFonts.lato(
+    bodyText1: GoogleFonts.roboto(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
     // bodyText2: GoogleFonts.
-    headline1: GoogleFonts.lato(
+    headline1: GoogleFonts.roboto(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
       color: Colors.black,
     ),
-    headline2: GoogleFonts.lato(
+    headline2: GoogleFonts.roboto(
       fontSize: 21.0,
       fontWeight: FontWeight.w700,
       color: Colors.black,
     ),
-    headline3: GoogleFonts.lato(
+    headline3: GoogleFonts.roboto(
       fontSize: 21.0,
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
-    headline6: GoogleFonts.lato(
+    headline6: GoogleFonts.roboto(
       fontSize: 20.0,
       fontWeight: FontWeight.w600,
       color: Colors.black,
@@ -34,27 +34,27 @@ class TuangeunTheme {
 
   // 2
   static TextTheme darkTextTheme = TextTheme(
-    bodyText1: GoogleFonts.lato(
+    bodyText1: GoogleFonts.roboto(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    headline1: GoogleFonts.lato(
+    headline1: GoogleFonts.roboto(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
       color: Colors.white,
     ),
-    headline2: GoogleFonts.lato(
+    headline2: GoogleFonts.roboto(
       fontSize: 21.0,
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
-    headline3: GoogleFonts.lato(
+    headline3: GoogleFonts.roboto(
       fontSize: 21.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-    headline6: GoogleFonts.lato(
+    headline6: GoogleFonts.roboto(
       fontSize: 20.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,

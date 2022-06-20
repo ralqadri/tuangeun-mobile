@@ -15,21 +15,24 @@ class CategoryPage extends StatelessWidget {
           childAspectRatio: 3,
           children: [
             CategoryCard(
-              cardTitle: "Restaurant",
-              cardColor: Colors.amber,
+              categoryTitle: "Restaurant",
+              categoryColor: Colors.amber,
               press: (){},
             ),
-            Container(
-              margin: EdgeInsets.all(4),
-              color: Colors.red,
+            CategoryCard(
+              categoryTitle: "Cafe",
+              categoryColor: Colors.blue,
+              press: (){},
             ),
-            Container(
-              margin: EdgeInsets.all(4),
-              color: Colors.blue,
+            CategoryCard(
+              categoryTitle: "Eatery",
+              categoryColor: Colors.green,
+              press: (){},
             ),
-            Container(
-              margin: EdgeInsets.all(4),
-              color: Colors.purple,
+            CategoryCard(
+              categoryTitle: "Coffeeshop",
+              categoryColor: Colors.purple,
+              press: (){},
             ),
           ],
         )
