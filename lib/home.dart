@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'searchPage.dart';
-import 'resto_card.dart';
+import 'page_explore.dart';
+import 'page_category.dart';
 
 // 1
 class Home extends StatefulWidget {
@@ -14,9 +15,10 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    RestoCard(),
-    SearchScreen(),
-    Container(color: Colors.blue),
+    ExplorePage(),
+    // SearchScreen(),
+    Container(color: Colors.green),
+    CategoryPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -48,6 +50,10 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.search_rounded),
             label: 'Search',
           ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.category_rounded),
+            label: 'Categories',
+          )
         ],
       ),
     );
