@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
     ExplorePage(),
-    // SearchScreen(),
+    // SearchScreen() // TODO: Fix SearchScreen state
     Container(color: Colors.green),
     CategoryPage(),
   ];

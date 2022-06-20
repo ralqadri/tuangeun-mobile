@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'resto_class.dart';
 // ignore: unused_import
 import 'tuangeun_theme.dart';
-import 'resto_card-info.dart';
+import 'card_resto-info.dart';
 
 var items = List<String>.generate(10, (i) => 'Item $i');
 
@@ -73,6 +73,7 @@ class RestosList extends StatelessWidget {
   }
 }
 
+// TODO: Refactor buildCard into it's own .dart file for consistency
 Widget buildCard(Resto resto, int index) {
   return Center(
       child: Container(
@@ -95,7 +96,7 @@ Widget buildCard(Resto resto, int index) {
                   Color(0x00000000),
                   Color(0xCC000000),
                 ]),
-            borderRadius: const BorderRadius.all(Radius.circular(12)),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.1),

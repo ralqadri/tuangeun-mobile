@@ -3,10 +3,10 @@ import 'tuangeun_theme.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:meditation_app/constants.dart';
 
-class CategoryCard extends StatelessWidget {
+class CategoryCardDinda extends StatelessWidget {
   final String? title;
   final void Function()? press;
-  const CategoryCard({
+  const CategoryCardDinda({
     Key? key,
     this.title,
     this.press,
@@ -21,7 +21,7 @@ class CategoryCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(13),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               offset: Offset(0, 17),
               blurRadius: 17,
@@ -38,12 +38,13 @@ class CategoryCard extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: <Widget>[
-                  Spacer(),
+                  const Spacer(),
                   // SvgPicture.asset(svgSrc),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     title!,
                     textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.black),
                   )
                 ],
               ),
