@@ -1,3 +1,5 @@
+// To be changed; currently using sample API data variables
+
 class Resto {
   final int albumId;
   final int id;
