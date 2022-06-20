@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tuangeun/category_card.dart';
+import 'package:tuangeun/card_category-dinda.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -57,15 +57,15 @@ class _SearchScreen extends State<SearchScreen>{
                             ),
                             child: Column(
                               children: <Widget>[
-                                CategoryCard(
+                                CategoryCardDinda(
                                   title: "Restaurant",
                                   press: (){},
                                 ),
-                                CategoryCard(
+                                CategoryCardDinda(
                                   title: "Cafe",
                                   press: (){},
                                 ),
-                                CategoryCard(
+                                CategoryCardDinda(
                                   title: "Fine Dining",
                                   press: (){},
                                 )
