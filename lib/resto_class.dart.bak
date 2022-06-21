@@ -4,8 +4,8 @@ class Resto {
   final int id;
   final String name;
   final String desc;
-  final double latitude;
-  final double longitude;
+  final String latitude;
+  final String longitude;
   final String imageLink;
 
   const Resto({
@@ -22,8 +22,8 @@ class Resto {
       id: json['id'] as int,
       name: json['name'] as String,
       desc: json['desc'] as String,
-      latitude: json['latitude'] as double,
-      longitude: json['longitude'] as double,
+      latitude: json['latitude'] as String,
+      longitude: json['longitude'] as String,
       imageLink: json['imageLink'] as String,
     );
   }

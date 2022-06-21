@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tuangeun/card_category-dinda.dart';
 import 'package:tuangeun/card_category.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -8,34 +7,38 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Expanded(
-        child: GridView.count(
-          padding: const EdgeInsets.all(20),
-          crossAxisCount: 2,
-          childAspectRatio: 3,
-          children: [
-            CategoryCard(
-              categoryTitle: "Restaurant",
-              categoryColor: Colors.amber,
-              press: (){},
-            ),
-            CategoryCard(
-              categoryTitle: "Cafe",
-              categoryColor: Colors.blue,
-              press: (){},
-            ),
-            CategoryCard(
-              categoryTitle: "Eatery",
-              categoryColor: Colors.green,
-              press: (){},
-            ),
-            CategoryCard(
-              categoryTitle: "Coffeeshop",
-              categoryColor: Colors.purple,
-              press: (){},
-            ),
-          ],
-        )
+      child: GridView.count(
+        padding: const EdgeInsets.all(20),
+        crossAxisCount: 2,
+        childAspectRatio: 3,
+        children: [
+          CategoryCard(
+            categoryTitle: "Restaurant",
+            categoryColor: Colors.amber,
+            press: (){},
+          ),
+          CategoryCard(
+            categoryTitle: "Cafe",
+            categoryColor: Colors.blue,
+            press: (){},
+          ),
+          CategoryCard(
+            categoryTitle: "Eatery",
+            categoryColor: Colors.green,
+            press: (){},
+          ),
+          CategoryCard(
+            categoryTitle: "Coffeeshop",
+            categoryColor: Colors.purple,
+            press: (){},
+          ),
+          CategoryCard(
+            categoryTitle: "Coffeeshop",
+            categoryColor: Colors.yellow,
+            press: (){},
+          ),
+          
+        ],
       ),
     );
   }

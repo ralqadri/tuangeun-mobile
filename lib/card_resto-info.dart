@@ -15,7 +15,8 @@ class RestoInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(minWidth: 700, maxWidth: 1280),
+      // color: Colors.black,
+      constraints: const BoxConstraints(minWidth: 700, maxWidth: 1280, minHeight: 200, maxHeight: 218),
       padding: const EdgeInsets.all(8),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -24,13 +25,14 @@ class RestoInfoCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Spacer(),
+                Text(
+                  restoTitle,
+                  style: TuangeunTheme.darkTextTheme.headline3,
+                ),
                 Text(
                   restoName,
                   style: TuangeunTheme.darkTextTheme.headline2,
-                ),
-                Text(
-                  restoTitle,
-                  style: TuangeunTheme.darkTextTheme.headline4,
                 ),
               ],
             )

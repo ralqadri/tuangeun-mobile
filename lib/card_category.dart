@@ -23,8 +23,8 @@ class CategoryCard extends StatelessWidget {
           image: DecorationImage(
             // TODO: Don't make the image random; make it fixed 
             image: Random().nextInt(2) % 2 == 0
-                ? const AssetImage('example_resto.jpg')
-                : const AssetImage('example_cafe.jpg'),
+                ? const AssetImage('images/cafe.jpg')
+                : const AssetImage('images/resto.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(0.3),
@@ -56,6 +56,10 @@ class CategoryCard extends StatelessWidget {
                           style: TuangeunTheme.darkTextTheme.headline1,
                         )
                       ],
-                    )))));
+                    )
+                  )
+                )
+              )
+              );
   }
 }
