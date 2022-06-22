@@ -66,19 +66,22 @@ class RestosList extends StatelessWidget {
     return ListView.builder(
       itemCount: restos.length,
       itemBuilder: (context, index) {
-        return buildRestoCard(restos[index], index);
+        return buildRestoCard(restos[index], index, context);
       },
     );
   }
 }
 
 // TODO: Refactor buildRestoCard into it's own .dart file for consistency
-Widget buildRestoCard(Resto resto, int index) {
+Widget buildRestoCard(Resto resto, int index, BuildContext context) {
   return Center(
       child: Material(
     color: Colors.transparent,
     child: InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => SecondRoute(resto)));
+      },
       child: Container(
           padding: const EdgeInsets.all(16),
           margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -120,4 +123,27 @@ Widget buildRestoCard(Resto resto, int index) {
           )),
     ),
   ));
+}
+
+class SecondRoute extends StatelessWidget {
+  SecondRoute(this.resto, {super.key});
+
+  Resto resto;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(resto.name),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
 }

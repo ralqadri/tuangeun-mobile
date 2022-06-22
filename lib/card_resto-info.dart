@@ -35,7 +35,7 @@ class RestoInfoCard extends StatelessWidget {
                   style: TuangeunTheme.darkTextTheme.headline2,
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
