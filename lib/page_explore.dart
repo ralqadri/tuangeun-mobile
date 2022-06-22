@@ -13,6 +13,7 @@ import 'page_restoinformation.dart';
 // Documentation used: https://docs.flutter.dev/cookbook/networking/background-parsing
 Future<List<Resto>> fetchRestos(http.Client client) async {
   final response =
+      // await client.get(Uri.parse('https://api.npoint.io/b76acd17475a19b3b5dc')); // OLD EXAMPLE DUMMY JSON
       await client.get(Uri.parse('https://api.npoint.io/b76acd17475a19b3b5dc'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
