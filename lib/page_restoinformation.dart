@@ -8,7 +8,6 @@ class RestoInformationPage extends StatelessWidget {
   RestoInformationPage(this.resto, {super.key});
 
   Resto resto;
-  AssetImage examplerestoimg = const AssetImage('example_cafe.jpg');
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class RestoInformationPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          _launchURL('https://flutter.dev');
+          _launchURL(resto.googleMapsLink);
         },
         icon: const Icon(
           Icons.location_on,
@@ -43,7 +42,7 @@ class RestoInformationPage extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: examplerestoimg,
+                        image: NetworkImage(resto.imageLink),
                         fit: BoxFit.cover,
                       ),
                       gradient: const LinearGradient(

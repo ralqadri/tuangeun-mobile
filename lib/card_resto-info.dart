@@ -4,12 +4,12 @@ import 'tuangeun_theme.dart';
 
 class RestoInfoCard extends StatelessWidget {
   final String restoName;
-  final String restoTitle;
+  final String restoCategory;
 
   const RestoInfoCard({
     Key? key,
     required this.restoName,
-    required this.restoTitle,
+    required this.restoCategory,
   }) : super(key: key);
 
   @override
@@ -27,12 +27,12 @@ class RestoInfoCard extends StatelessWidget {
               children: [
                 const Spacer(),
                 Text(
-                  restoTitle,
+                  restoCategory,
                   style: TuangeunTheme.darkTextTheme.headline3,
                 ),
                 Text(
                   restoName,
-                  style: TuangeunTheme.darkTextTheme.headline2,
+                  style: TuangeunTheme.darkTextTheme.headline1,
                 ),
               ],
             ),

@@ -14,7 +14,7 @@ import 'page_restoinformation.dart';
 Future<List<Resto>> fetchRestos(http.Client client) async {
   final response =
       // await client.get(Uri.parse('https://api.npoint.io/b76acd17475a19b3b5dc')); // OLD EXAMPLE DUMMY JSON
-      await client.get(Uri.parse('https://api.npoint.io/b76acd17475a19b3b5dc'));
+      await client.get(Uri.parse('https://api.npoint.io/1a2ef27ab43e7eb6cdee'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parseRestos, response.body);
@@ -90,8 +90,8 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
               minWidth: 200, maxWidth: 1280, minHeight: 250, maxHeight: 250),
           decoration: BoxDecoration(
             image: DecorationImage(
-                // image: NetworkImage((resto.url).toString()),
-                image: const NetworkImage("https://i.imgur.com/b0EuTXy.png"),
+                image: NetworkImage((resto.imageLink).toString()),
+                // image: const NetworkImage("https://i.imgur.com/b0EuTXy.png"),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.6),
@@ -121,7 +121,7 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
           child: Column(
             children: [
               RestoInfoCard(
-                  restoName: (resto.name), restoTitle: resto.id.toString())
+                  restoName: resto.name, restoCategory: resto.category)
             ],
           )),
     ),
