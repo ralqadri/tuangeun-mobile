@@ -35,12 +35,12 @@ class TuangeunTheme {
   // 2
   static TextTheme darkTextTheme = TextTheme(
     bodyText1: GoogleFonts.roboto(
-      fontSize: 14.0,
-      fontWeight: FontWeight.w700,
+      fontSize: 20,
+      fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
     headline1: GoogleFonts.roboto(
-      fontSize: 32.0,
+      fontSize: 48.0,
       fontWeight: FontWeight.bold,
       color: Colors.white,
     ),

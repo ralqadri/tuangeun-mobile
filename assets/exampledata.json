@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "name": "reprehenderit et",
+    "desc": "Proident mollit ipsum dolore cupidatat duis occaecat tempor magna sint enim quis ea. Nostrud laborum est quis sunt. Quis ut occaecat commodo sint proident est qui non veniam minim anim cillum. Nostrud officia anim qui velit voluptate magna et reprehenderit anim. Cupidatat reprehenderit officia quis veniam labore culpa commodo. Adipisicing ipsum elit exercitation duis laborum excepteur tempor proident culpa et ut magna eu nisi. Do esse nisi reprehenderit aliqua.\r\n",
+    "latitude": -35.386221,
+    "longitude": 139.073338,
+    "imageLink": "http://placehold.it/32x32",
+    "googleMapsLink": ""
+  },
+  {
+    "id": 1,
+    "name": "ullamco proident",
+    "desc": "Magna excepteur mollit pariatur cillum proident nostrud minim ullamco anim aliqua. Nostrud eu deserunt consequat do exercitation. Officia consequat minim aliquip ullamco officia laboris. Do laborum anim cillum esse.\r\n",
+    "latitude": 46.071881,
+    "longitude": -13.955038,
+    "imageLink": "http://placehold.it/32x32",
+    "googleMapsLink": ""
+  }
+]

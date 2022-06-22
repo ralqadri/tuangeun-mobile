@@ -1,4 +1,6 @@
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'resto_class.dart';
 import 'tuangeun_theme.dart';
 
@@ -14,52 +16,91 @@ class RestoInformationPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(resto.name),
       ),
-      body: Center(
-        child: SingleChildScrollView(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          _launchURL('https://flutter.dev');
+        },
+        icon: const Icon(
+          Icons.location_on,
+          color: Colors.white,
+        ),
+        label: Text(
+          ' Open on Google Maps ',
+          style: TuangeunTheme.darkTextTheme.headline5,
+        ),
+        
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
               Container(
-                // color: Colors.purple,
+                  width: MediaQuery.of(context).size.width,
+                  height: 450,
+                  padding: const EdgeInsets.all(16),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: examplerestoimg,
+                        fit: BoxFit.cover,
+                      ),
+                      gradient: const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xCC000000),
+                            Color(0x00000000),
+                            Color(0x00000000),
+                            Color(0xCC000000),
+                          ]),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.15),
+                          spreadRadius: 3,
+                          blurRadius: 7,
+                          offset: const Offset(0, 3),
+                        ),
+                      ])),
+              SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: 450,
-                padding: const EdgeInsets.all(16),
-                margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: examplerestoimg,
-                    fit: BoxFit.cover,
-                  ),
-                  gradient: const LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xCC000000),
-                      Color(0x00000000),
-                      Color(0x00000000),
-                      Color(0xCC000000),
-                    ]
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.15),
-                      spreadRadius: 3,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3),
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 12.5),
+                        child: Text(
+                          resto.name,
+                          style: TuangeunTheme.darkTextTheme.headline1,
+                        ),
+                      ),
                     ),
-                  ]
-                )
-              ),
-              Container(
-                color: Colors.blue,
-                width: 500,
-                height: 500,
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 12.5, top: 5),
+                        child: Text(
+                          resto.desc,
+                          style: TuangeunTheme.darkTextTheme.bodyLarge,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
-          )
-        )
-      ),
+          )),
     );
+  }
+}
+
+_launchURL(String url) async {
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
