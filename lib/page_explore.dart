@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'resto_class.dart';
-// ignore: unused_import
 import 'tuangeun_theme.dart';
 import 'card_resto-info.dart';
+import 'page_restoinformation.dart';
 
 // var items = List<String>.generate(10, (i) => 'Item $i');
 
@@ -46,7 +46,7 @@ class ExplorePage extends StatelessWidget {
           if (snapshot.hasError) {
             return const Center(child: Text('An error has occured!'));
           } else if (snapshot.hasData) {
-            return RestosList(restos: snapshot.data!);
+            return RestosListPage(restos: snapshot.data!);
           } else {
             return const Center(
               child: Text('Data not loaded!'),
@@ -56,8 +56,8 @@ class ExplorePage extends StatelessWidget {
   }
 }
 
-class RestosList extends StatelessWidget {
-  const RestosList({super.key, required this.restos});
+class RestosListPage extends StatelessWidget {
+  const RestosListPage({super.key, required this.restos});
 
   final List<Resto> restos;
 
@@ -80,7 +80,7 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
     child: InkWell(
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => SecondRoute(resto)));
+            MaterialPageRoute(builder: (context) => RestoInformationPage(resto)));
       },
       child: Container(
           padding: const EdgeInsets.all(16),
@@ -95,7 +95,8 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.6),
                   BlendMode.dstATop,
-                )),
+                )
+              ),
             gradient: const LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -104,7 +105,8 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
                   Color(0x00000000),
                   Color(0x00000000),
                   Color(0xCC000000),
-                ]),
+                ],
+              ),
             borderRadius: const BorderRadius.all(Radius.circular(8)),
             boxShadow: [
               BoxShadow(
@@ -123,27 +125,4 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
           )),
     ),
   ));
-}
-
-class SecondRoute extends StatelessWidget {
-  SecondRoute(this.resto, {super.key});
-
-  Resto resto;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(resto.name),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
 }
