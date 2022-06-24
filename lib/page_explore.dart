@@ -14,7 +14,7 @@ import 'page_restoinformation.dart';
 Future<List<Resto>> fetchRestos(http.Client client) async {
   final response =
       // await client.get(Uri.parse('https://api.npoint.io/b76acd17475a19b3b5dc')); // OLD EXAMPLE DUMMY JSON
-      await client.get(Uri.parse('https://api.npoint.io/1a2ef27ab43e7eb6cdee'));
+      await client.get(Uri.parse('http://localhost:8000/api/restaurant'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parseRestos, response.body);
@@ -23,8 +23,9 @@ Future<List<Resto>> fetchRestos(http.Client client) async {
 // A function that converts a response body into a List<Photo>.
 List<Resto> parseRestos(String responseBody) {
   final parsed = jsonDecode(responseBody);
-
-  return parsed.map<Resto>((json) => Resto.fromJson(json)).toList();
+  final rest = parsed["data"] as List;
+  print(responseBody);
+  return rest.map<Resto>((json) => Resto.fromJson(json)).toList();
 }
 
 class ExplorePage extends StatelessWidget {
@@ -80,8 +81,10 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
     color: Colors.transparent,
     child: InkWell(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => RestoInformationPage(resto)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => RestoInformationPage(resto)));
       },
       child: Container(
           padding: const EdgeInsets.all(16),
@@ -96,18 +99,17 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.6),
                   BlendMode.dstATop,
-                )
-              ),
+                )),
             gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xCC000000),
-                  Color(0x00000000),
-                  Color(0x00000000),
-                  Color(0xCC000000),
-                ],
-              ),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xCC000000),
+                Color(0x00000000),
+                Color(0x00000000),
+                Color(0xCC000000),
+              ],
+            ),
             borderRadius: const BorderRadius.all(Radius.circular(8)),
             boxShadow: [
               BoxShadow(
