@@ -11,7 +11,7 @@ class TuangeunTheme {
     ),
     // bodyText2: GoogleFonts.
     headline1: GoogleFonts.roboto(
-      fontSize: 32.0,
+      fontSize: 30.0,
       fontWeight: FontWeight.bold,
       color: Colors.black,
     ),
