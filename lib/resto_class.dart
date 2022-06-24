@@ -8,7 +8,6 @@ class Resto {
   final double latitude;
   final double longitude;
   final String imageLink;
-  final String googleMapsLink;
 
   const Resto({
     required this.id,
@@ -18,7 +17,6 @@ class Resto {
     required this.latitude,
     required this.longitude,
     required this.imageLink,
-    required this.googleMapsLink,
   });
 
   factory Resto.fromJson(Map<String, dynamic> json) {
@@ -30,7 +28,6 @@ class Resto {
       latitude: json['latitude'] as double,
       longitude: json['longitude'] as double,
       imageLink: json['imageLink'] as String,
-      googleMapsLink: json['googleMapsLink'] as String,
     );
   }
 }
