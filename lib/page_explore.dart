@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'resto_class.dart';
 import 'tuangeun_theme.dart';
+import 'card_buildrestocard.dart';
 import 'card_resto-info.dart';
 import 'page_restoinformation.dart';
+import 'list_restolistpage.dart';
 
 // var items = List<String>.generate(10, (i) => 'Item $i');
 
@@ -17,6 +19,7 @@ Future<List<Resto>> fetchRestos(http.Client client) async {
       // await client.get(Uri.parse('https://api.npoint.io/1a2ef27ab43e7eb6cdee')); // OLD EXAMPLE DUMMY JSON
       // await client.get(Uri.parse('https://api.npoint.io/776b89ade036023e7b8c')); // OLD EXAMPLE DUMMY JSON
       await client.get(Uri.parse('http://localhost:8000/api/restaurant'));
+  // await client.get(Uri.parse('http://localhost:8000/api/restaurant'));
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parseRestos, response.body);
@@ -35,7 +38,7 @@ class ExplorePage extends StatelessWidget {
   ExplorePage({Key? key}) : super(key: key);
 
   // JSON parsing, using placeholder/example data for now
-  var _jsonList = fetchRestos(http.Client());
+  // var _jsonList = fetchRestos(http.Client());
 
   @override
   Widget build(BuildContext context) {
@@ -61,74 +64,3 @@ class ExplorePage extends StatelessWidget {
   }
 }
 
-class RestosListPage extends StatelessWidget {
-  const RestosListPage({super.key, required this.restos});
-
-  final List<Resto> restos;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: restos.length,
-      itemBuilder: (context, index) {
-        return buildRestoCard(restos[index], index, context);
-      },
-    );
-  }
-}
-
-// TODO: Refactor buildRestoCard into it's own .dart file for consistency
-Widget buildRestoCard(Resto resto, int index, BuildContext context) {
-  return Center(
-      child: Material(
-    color: Colors.transparent,
-    child: InkWell(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => RestoInformationPage(resto)));
-      },
-      child: Container(
-          padding: const EdgeInsets.all(16),
-          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          constraints: const BoxConstraints(
-              minWidth: 200, maxWidth: 1280, minHeight: 250, maxHeight: 250),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage((resto.imageLink).toString()),
-                // image: const NetworkImage("https://i.imgur.com/b0EuTXy.png"),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.6),
-                  BlendMode.dstATop,
-                )),
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xCC000000),
-                Color(0x00000000),
-                Color(0x00000000),
-                Color(0xCC000000),
-              ],
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 3),
-              )
-            ],
-          ),
-          child: Column(
-            children: [
-              RestoInfoCard(
-                  restoName: resto.name, restoCategory: resto.category)
-            ],
-          )),
-    ),
-  ));
-}

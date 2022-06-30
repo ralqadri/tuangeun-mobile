@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tuangeun/card_category.dart';
+import 'page_category-explore.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -15,7 +16,14 @@ class CategoryPage extends StatelessWidget {
           CategoryCard(
             categoryTitle: "Restaurant",
             categoryColor: Colors.amber,
-            press: (){},
+            press: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => CategoryExplorePage("restaurant")
+                )
+              );
+            }
           ),
           CategoryCard(
             categoryTitle: "Cafe",
