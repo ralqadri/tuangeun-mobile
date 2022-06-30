@@ -41,7 +41,18 @@ class CategoryExplorePage extends StatelessWidget {
           } else if (snapshot.hasData) {
             return RestosListPage(restos: snapshot.data!);
           } else {
-            return Center(child: Text('Data not loaded! Category: $categoryQuery'));
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  SizedBox(height: 15),
+                  Text('Loading $categoryQuery...',
+                      style: TuangeunTheme.darkTextTheme.headline3),
+                ],
+              ),
+            );
           }
         },
       ),

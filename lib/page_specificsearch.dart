@@ -41,7 +41,18 @@ class SpecificSearchExplorePage extends StatelessWidget {
           } else if (snapshot.hasData) {
             return RestosListPage(restos: snapshot.data!);
           } else {
-            return Center(child: Text('Data not loaded! Search query: $restoQuery'));
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  SizedBox(height: 15),
+                  Text('Loading $restoQuery...',
+                      style: TuangeunTheme.darkTextTheme.headline3),
+                ],
+              ),
+            );
           }
         },
       ),
