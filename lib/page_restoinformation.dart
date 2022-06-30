@@ -21,7 +21,7 @@ class RestoInformationPage extends StatelessWidget {
         },
         icon: const Icon(
           Icons.location_on,
-          color: Colors.white,
+          color: Colors.black,
         ),
         label: Text(
           ' Open on Google Maps ',
