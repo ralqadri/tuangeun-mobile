@@ -5,8 +5,8 @@ class Resto {
   final String name;
   final String category;
   final String desc;
-  final String latitude;
-  final String longitude;
+  final double latitude;
+  final double longitude;
   final String imageLink;
   final String googleMapsLink;
 
@@ -27,8 +27,8 @@ class Resto {
       name: json['name_resto'] as String,
       category: json['category'] as String,
       desc: json['desc_resto'] as String,
-      latitude: json['latitude'] as String,
-      longitude: json['longitude'] as String,
+      latitude: json['latitude'] as double,
+      longitude: json['longitude'] as double,
       imageLink: json['imageLink'] as String,
       googleMapsLink: json['googleMapsLink'] as String,
     );
