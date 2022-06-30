@@ -6,15 +6,15 @@ import 'package:tuangeun/list_restolistpage.dart';
 import 'resto_class.dart';
 import 'tuangeun_theme.dart';
 
-class CategoryExplorePage extends StatelessWidget {
-  CategoryExplorePage(this.categoryQuery, {super.key});
+class SpecificSearchExplorePage extends StatelessWidget {
+  SpecificSearchExplorePage(this.restoQuery, {super.key});
 
-  String categoryQuery;
+  String restoQuery;
 
   // JSON parsing for resto list according to category
   Future<List<Resto>> fetchRestos(http.Client client) async {
     final response = await client.get(Uri.parse(
-        'http://localhost:8000/api/restaurant/categories/$categoryQuery'));
+        'http://localhost:8000/api/restaurant/$restoQuery'));
 
     return compute(parseRestos, response.body);
   }
@@ -31,17 +31,17 @@ class CategoryExplorePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoryQuery),
+        title: Text(restoQuery),
       ),
       body: FutureBuilder<List<Resto>>(
         future: fetchRestos(http.Client()),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Center(child: Text('An error has occured! Category: $categoryQuery'));
+            return Center(child: Text('An error has occured! Search query: $restoQuery'));
           } else if (snapshot.hasData) {
             return RestosListPage(restos: snapshot.data!);
           } else {
-            return Center(child: Text('Data not loaded! Category: $categoryQuery'));
+            return Center(child: Text('Data not loaded! Search query: $restoQuery'));
           }
         },
       ),

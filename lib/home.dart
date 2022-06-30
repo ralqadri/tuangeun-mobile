@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'searchPage.dart';
+import 'page_search.dart';
 import 'page_explore.dart';
 import 'page_category.dart';
 

@@ -20,7 +20,7 @@ class CategoryPage extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(
-                  builder: (context) => CategoryExplorePage("restaurant")
+                  builder: (context) => CategoryExplorePage("Restaurant")
                 )
               );
             }
@@ -28,24 +28,39 @@ class CategoryPage extends StatelessWidget {
           CategoryCard(
             categoryTitle: "Cafe",
             categoryColor: Colors.blue,
-            press: (){},
+            press: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => CategoryExplorePage("Cafe")
+                )
+              );
+            }
           ),
           CategoryCard(
-            categoryTitle: "Eatery",
+            categoryTitle: "Warung",
             categoryColor: Colors.green,
-            press: (){},
+            press: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => CategoryExplorePage("Warung")
+                )
+              );
+            }
           ),
           CategoryCard(
-            categoryTitle: "Coffeeshop",
-            categoryColor: Colors.purple,
-            press: (){},
+            categoryTitle: "Fine Dining",
+            categoryColor: Colors.deepOrange,
+            press: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => CategoryExplorePage("Fine Dining")
+                )
+              );
+            }
           ),
-          CategoryCard(
-            categoryTitle: "Coffeeshop",
-            categoryColor: Colors.yellow,
-            press: (){},
-          ),
-          
         ],
       ),
     );

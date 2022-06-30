@@ -60,7 +60,8 @@ class ExplorePage extends StatelessWidget {
               child: Text('Data not loaded!'),
             );
           }
-        });
+        }
+      );
   }
 }
 
