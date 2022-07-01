@@ -16,7 +16,7 @@ Widget buildRestoCard(Resto resto, int index, BuildContext context) {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => RestoInformationPage(resto)));
+                builder: (context) => RestoInformationPage(resto, index.toString())));
       },
       child: CachedNetworkImage(
         imageUrl: resto.imageLink,

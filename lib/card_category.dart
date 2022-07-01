@@ -29,7 +29,11 @@ class CategoryCard extends StatelessWidget {
                 ? const AssetImage('images/finedine.jpg')
                 : categoryTitle == "Warung"
                 ? const AssetImage('images/warung.jpg')
-                : const AssetImage('images/default.jpg'),
+                : categoryTitle == "Coffeeshop"
+                ? const AssetImage('images/cafe.jpg')
+                : categoryTitle == "Healthy Food"
+                ? const AssetImage('images/default1.jpg')
+                : const AssetImage('images/default2.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(0.3),

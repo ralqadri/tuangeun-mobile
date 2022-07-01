@@ -14,7 +14,7 @@ Widget buildPlainRestoCard(Resto resto, int index, BuildContext context) {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => RestoInformationPage(resto)));
+                builder: (context) => RestoInformationPage(resto, resto.id.toString())));
       },
       child: Container(
             padding: const EdgeInsets.all(16),
