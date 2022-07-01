@@ -30,7 +30,7 @@ class RestoInformationPage extends StatelessWidget {
     // final parsedData = parsed['data'] as List;
     // print(parsed['data']);
 
-    return parsed['data'].map<Rating>((json) => Resto.fromJson(json)).toList();
+    return parsed['data'].map<Rating>((json) => Rating.fromJson(json)).toList();
   }
 
   @override
@@ -111,7 +111,7 @@ class RestoInformationPage extends StatelessWidget {
                         child: Divider(
                             color: Color.fromRGBO(255, 255, 255, 0.4),
                             thickness: 2)),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height,
                       child: FutureBuilder<List<Rating>>(
                           future: fetchRestoRatings(http.Client()),

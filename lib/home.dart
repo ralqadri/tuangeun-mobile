@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
     ExplorePage(),
     SearchScreen(),
-    CategoryPage(),
+    // CategoryPage(),
     ProfilScreen(),
     // (),
   ];
@@ -83,10 +83,10 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.search_rounded),
             label: 'Search',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.category_rounded),
-            label: 'Categories',
-          ),
+          // const BottomNavigationBarItem(
+          //   icon: Icon(Icons.category_rounded),
+          //   label: 'Categories',
+          // ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'Profile',
