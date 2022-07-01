@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tuangeun/page_explore.dart';
+import 'package:tuangeun/page_exploreandcategory.dart';
 import 'page_search.dart';
 import 'page_explore.dart';
 import 'page_category.dart';
@@ -15,8 +17,8 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
+    ExploreAndCategoryPage(),
     ExplorePage(),
-    // TODO: Fix SearchScreen state
     SearchScreen(), 
     CategoryPage(),
   ];
@@ -42,6 +44,10 @@ class _HomeState extends State<Home> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: <BottomNavigationBarItem>[
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.explore_rounded),
+            label: 'Explore and Category',
+          ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.food_bank_rounded),
             label: 'Explore',

@@ -8,6 +8,7 @@ import 'card_buildrestocard.dart';
 import 'card_resto-info.dart';
 import 'page_restoinformation.dart';
 import 'list_restolistpage.dart';
+import 'page_category.dart';
 
 // var items = List<String>.generate(10, (i) => 'Item $i');
 
@@ -63,13 +64,12 @@ class ExplorePage extends StatelessWidget {
                 children: [
                   CircularProgressIndicator(),
                   SizedBox(height: 15),
-                  Text('Loading data...', style: TuangeunTheme.darkTextTheme.headline3),
+                  Text('Loading data...',
+                      style: TuangeunTheme.darkTextTheme.headline3),
                 ],
               ),
             );
           }
-        }
-      );
+        });
   }
 }
-
