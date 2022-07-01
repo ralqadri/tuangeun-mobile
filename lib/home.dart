@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'page_search.dart';
 import 'page_explore.dart';
 import 'page_category.dart';
+import 'profilPage.dart';
+import 'loginPage.dart';
+import 'registerPage.dart';
 
 // 1
 class Home extends StatefulWidget {
@@ -16,9 +19,10 @@ class _HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
     ExplorePage(),
-    // TODO: Fix SearchScreen state
-    SearchScreen(), 
+    SearchScreen(),
     CategoryPage(),
+    ProfilScreen(),
+    // (),
   ];
 
   void _onItemTapped(int index) {
@@ -26,7 +30,7 @@ class _HomeState extends State<Home> {
       _selectedIndex = index;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +40,35 @@ class _HomeState extends State<Home> {
           style: Theme.of(context).textTheme.headline6,
         ),
       ),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('images/logo.png')),
+              color: Colors.red,
+            ),
+            child: Text(''),
+          ),
+          ListTile(
+              title: const Text('Login'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage())
+                );
+              }),
+          ListTile(
+              title: const Text('Register'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterPage())
+                );
+              })
+        ],
+      )),
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
@@ -53,6 +86,10 @@ class _HomeState extends State<Home> {
           const BottomNavigationBarItem(
             icon: Icon(Icons.category_rounded),
             label: 'Categories',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
           )
         ],
       ),
