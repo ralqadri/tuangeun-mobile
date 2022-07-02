@@ -34,18 +34,32 @@ class ProfilScreen extends StatelessWidget {
                       ),
                     ),
                     textField(hintText: "Sukiyem"),
-                    SizedBox(height:10),
+                    SizedBox(height:5),
                     textField(hintText: "sukiyemgawl@gmail.com"),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     textField(hintText: "sukiyemgawl"),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     Container(
                       margin: EdgeInsets.only(top: 20),
                       height: 35,
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(primary: Colors.amber),
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                            context: context, 
+                            builder: (context) => AlertDialog(
+                              title: const Text('Updated'),
+                              content: const Text('Profile has been updated!'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text('OK')
+                                )
+                              ],
+                            )
+                          );
+                        },
                         child: Center(
                           child: Text(
                             "Update",

@@ -66,11 +66,11 @@ Widget buildRatingCommentCard(Rating rating, int index, BuildContext context) {
             ],
           ),
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+            padding: const EdgeInsets.symmetric(vertical: 12,),
             width: MediaQuery.of(context).size.width*0.8,
             child: Column(
               children: [
-                Text(rating.review, style: TuangeunTheme.darkTextTheme.headline3,)
+                Text(rating.review, style: TuangeunTheme.darkTextTheme.headline2,)
               ],
             )
           )

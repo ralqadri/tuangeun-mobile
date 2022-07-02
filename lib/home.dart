@@ -39,6 +39,7 @@ class _HomeState extends State<Home> {
           'Tuangeun',
           style: Theme.of(context).textTheme.headline6,
         ),
+        // title: Image.asset('icons/logo.png', fit),
       ),
       drawer: Drawer(
           child: ListView(
